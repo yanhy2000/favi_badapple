@@ -1,0 +1,1 @@
+ffmpeg -f lavfi -i anullsrc=r=44100:cl=stereo -t 3600 -q:a 9 -acodec libmp3lame silence.mp3

@@ -1,0 +1,2 @@
+python openChrome.py
+pause
