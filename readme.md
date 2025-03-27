@@ -1,15 +1,19 @@
 # favi_badapple
 
 > 灵感来源：https://github.com/nolenroyalty/faviconic
+
 > 视频演示：https://www.bilibili.com/video/BV1H393YCEce/
 
 ## 简介
 
 实现原理比较简单，需要一个中间websocket服务器。打开web页面自动连接服务器，并依次标号排序。
+
 当标签页全部打开并组合完成后，由服务端发送指令给每个网页，以控制标签页图标的颜色变化。
+
 因此可以通过修改服务端与html来实现彩色等不同玩法。
 
 网页使用静音音频进行保活，防止在后台时js性能被限制。
+
 可自行使用*tool/row2bin.py*脚本解析其他视频
 
 ## 项目结构
@@ -55,6 +59,7 @@ start-openChrome.bat
 ### 自定义web窗口
 
 修改根目录下的*openChrome.py*
+
 默认配置：
 ```
 # ==================== 配置 ====================
@@ -79,11 +84,14 @@ base_url = "http://localhost:888/"#http服务器地址
 ## 修改\开发建议
 
 HTML文件：位于`web/index.html`，通过修改该文件可调整favi图标的颜色与内容，该项目中默认只有黑白两色(由函数updateFavicon控制)。
+
 websocket服务端：位于`server.js`，可修改下发的指令等逻辑。
+
 图像取模转换：位于`tool/convert_frames_to_data.py`，可修改处理图像逻辑，该项目中只截取图像的色彩为黑白两色。
 
 
 ## 补充
 
 项目内用到的http-server为[simple-http-server](https://github.com/TheWaWaR/simple-http-server)
+
 项目内所使用的chromedriver来自[Google Chromium](https://sites.google.com/chromium.org/driver/downloads)
